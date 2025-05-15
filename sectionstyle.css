@@ -1,0 +1,39 @@
+body {
+  background-color: #e5e8f0; /* dark base color */
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.15;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cG9seWdvbiBwb2ludHM9IjMwLDAgNDUsMTUgMzAsMzAgMTUsMTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzQyQzBCQSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+');
+  background-size: 60px 60px;
+  background-position: 0 0;
+  animation: diamondMove 60s linear infinite;
+}
+
+@keyframes diamondMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 120px 60px;
+  }
+}
+
+
+
+
+
+
+
+
+/*  */
+

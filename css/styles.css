@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Custom styles */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif !important;
+
+  overflow-x: hidden;
+}
+
+/* .navbar-bg {
+  background-image: url("https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+} */
+
+/* .nav-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+} */
+
+/* .navbar {
+  transition: all 0.3s ease;
+} */
+/* 
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+} */
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navfour {
+  border: 1px solid #c8cfd3;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Banner SEction */
+ 
+
+
+
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+/* Animate.css for animations */
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-timeline: auto;
+  scrollbar-gutter: stable;
+}
+
+/* magnetic button */
+.magnetic-btn {
+  transition: transform 0.15s ease-out;
+  border: 1px solid #1F4356;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.magnetic-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background-color: #1F4356;
+  transition: height 0.5s ease;
+  z-index: -1;
+}
+.magnetic-btn:hover {
+  color: white;
+}
+.magnetic-btn:hover::before {
+  height: 100%;
+}
+
+
+/* Magnetic Button 2 */
+
+.magnetic-btn2 {
+  transition: transform 0.15s ease-out;
+  border: 2px solid #1F4356;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.magnetic-btn2::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background-color: #1F4356;
+  transition: height 0.5s ease;
+  z-index: -1;
+}
+.magnetic-btn2:hover {
+  color: white;
+}
+.magnetic-btn2:hover::before {
+  height: 100%;
+}
+
+
+/* Magnetic Button 2 */
+
+.magnetic-btn3 {
+  transition: transform 0.15s ease-out;
+  border: 2px solid #1F4356;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.magnetic-btn3::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background-color: #1F4356;
+  transition: height 0.5s ease;
+  z-index: -1;
+}
+.magnetic-btn3:hover {
+  color: white;
+}
+.magnetic-btn3:hover::before {
+  height: 100%;
+}

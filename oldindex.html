@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimedicus</title>
+  <link rel="icon" type="/images/favicon.ico" href="images/favicon.ico">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #42c0bab0 0%, #289DD3 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+ /* Required by Locomotive Scroll */
+ [data-scroll-container] {
+      overflow: hidden;
+    }
+    /* Enables momentum/inertial scrolling */
+html, body {
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch; /* For Safari */
+}
+
+/* Optional: Makes scrollbar prettier */
+
+::-webkit-scrollbar-thumb {
+  background: #44505e;
+  border-radius: 4px;
+}
+  </style>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    /* Required by Locomotive Scroll */
+    [data-scroll-container] {
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+
+
+
+<body class="bg-gray-900 text-white overflow-x-hidden font-['Inter']">
+  <!-- Modern Navbar -->
+  <div data-scroll-container>
+
+
+    <div data-scroll-section class="absolute w-full z-50 pt-5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="#" class="flex items-center">
+              <img src="/images/logo.png" width="165px" alt="">
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="flex pt-5">
+
+
+            <div class="hidden md:flex items-center px-5 space-x-8">
+              <!-- Solutions Dropdown -->
+              <div class="relative group">
+                <a href="#"
+                  class="text-[#1F4356] hover:text-[#1e698b] px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
+                  Solutions
+                  <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-180" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+
+                <!-- Dropdown Menu -->
+                <div class="absolute w-60 rounded-2xl bg-white
+               opacity-0 p-6 invisible translate-y-1 
+               group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
+               transition-all duration-300 ease-out 
+               pointer-events-none group-hover:pointer-events-auto
+               z-50">
+                  <div class="py-1">
+                    <a href="#"
+                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      Medical
+                      <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                    </a>
+
+                    <a href="#"
+                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      Programs
+                      <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                    </a>
+
+                    <a href="#"
+                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      Diagnostics
+                      <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                    </a>
+
+                    <a href="#"
+                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      Articles
+                      <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden md:flex items-center px-5 space-x-8">
+              <!-- About Dropdown -->
+              <div class="relative group">
+                <a href="#"
+                  class="text-[#1F4356] hover:text-[#1e698b] px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
+                  About
+                  <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-180" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+
+                <!-- Dropdown Menu -->
+                <div class="absolute w-60 rounded-2xl bg-white
+               opacity-0 p-6 invisible translate-y-1 
+               group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
+               transition-all duration-300 ease-out 
+               pointer-events-none group-hover:pointer-events-auto
+               z-50">
+                  <div class="py-1">
+                    <a href="#"
+                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      Portfolio
+                      <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                    </a>
+
+                    <a href="#"
+                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden  tracking-wider">
+                      Vission
+                      <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                    </a>
+
+                    <a href="#"
+                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      Mission
+                      <span
+                        class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Career -->
+            <!-- <div class="hidden md:flex items-center px-5 space-x-8">
+            <div class="relative group">
+              <a href="#"
+                class="text-[#1F4356] hover:text-[#1e698b] px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
+                Careers
+                <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-180" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+
+              <div class="absolute w-60 rounded-2xl bg-white
+               opacity-0 p-6 invisible translate-y-1 
+               group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
+               transition-all duration-300 ease-out 
+               pointer-events-none group-hover:pointer-events-auto
+               z-50">
+                <div class="py-1">
+                   
+
+                   
+
+                  <a href="#"
+                    class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                    Mission
+                    <span
+                      class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+
+            <!-- <div class="hidden md:flex items-center px-5 space-x-8">
+            <div class="relative group">
+              <a href="#"
+                class="text-[#1F4356] hover:text-[#1e698b] px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
+                Careers
+                <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-180" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+
+              <div class="absolute w-60 rounded-2xl bg-white
+               opacity-0 p-6 invisible translate-y-1 
+               group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
+               transition-all duration-300 ease-out 
+               pointer-events-none group-hover:pointer-events-auto
+               z-50">
+                <div class="py-1">
+                  <a href="#"
+                    class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                    Portfolio
+                    <span
+                      class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                  </a>
+
+                  <a href="#"
+                    class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden  tracking-wider">
+                    Vission
+                    <span
+                      class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
+                  </a>
+
+                   
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+
+            <button
+              class="magnetic-btn font-medium px-10 py-4 rounded-xl font-medium text-[#1F4356] tracking-wider uppercase">
+              Schedule a Meeting
+            </button>
+
+            <script>
+              const btn = document.querySelector('.magnetic-btn');
+
+              btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                // Calculate direction-based power
+                const horizontalPower = 0.25;
+                const verticalPower = 0.4;
+
+                const moveX = (x - centerX) * horizontalPower;
+                const moveY = (y - centerY) * verticalPower;
+
+                btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+              });
+
+              btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+              });
+            </script>
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <!-- Request a Meeting Button -->
+
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class=" hover:text-white focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div  id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-full max-w-xs bg-gray-900 border-l border-gray-800 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="flex flex-col h-full p-6">
+          <div class="flex justify-between items-center mb-8">
+            <a href="#" class="text-2xl font-bold">
+              <span class="gradient-text">LOGO</span>
+            </a>
+            <button id="close-menu-button" class="text-gray-400 hover:text-white">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+  
+          <div class="flex-1 flex flex-col space-y-6">
+  
+            <div>
+              <button id="solutions-dropdown-button"
+                class="flex items-center justify-between w-full text-left  hover:text-white py-2 text-lg font-medium">
+                Solutions
+                <svg class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="solutions-dropdown" class="hidden pl-4 mt-2 space-y-2">
+                <a href="#" class="block py-2 text-gray-400 hover:text-white">Solution 1</a>
+                <a href="#" class="block py-2 text-gray-400 hover:text-white">Solution 2</a>
+                <a href="#" class="block py-2 text-gray-400 hover:text-white">Solution 3</a>
+                <a href="#" class="block py-2 text-gray-400 hover:text-white">Solution 4</a>
+              </div>
+            </div>
+  
+            <div>
+              <button id="about-dropdown-button"
+                class="flex items-center justify-between w-full text-left  hover:text-white py-2 text-lg font-medium">
+                About
+                <svg class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="about-dropdown" class="hidden pl-4 mt-2 space-y-2">
+                <a href="#" class="block py-2 text-gray-400 hover:text-white">About 1</a>
+                <a href="#" class="block py-2 text-gray-400 hover:text-white">About 2</a>
+                <a href="#" class="block py-2 text-gray-400 hover:text-white">About 3</a>
+              </div>
+            </div>
+  
+  
+            <a href="#" class="text-white text-lg font-semibold py-2 border-t border-gray-800 pt-4">
+              Schedule a meeting
+            </a>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    </nav>
+
+    <!-- Parallax Hero Section -->
+    <section class="banner-shadow relative h-screen overflow-hidden pt-16 md:pt-20">
+      <!-- Background layer (moves slower) -->
+
+      <div
+        class="absolute banner-sec inset-0 bg-[url('./images/banner3.jpg')] bg-top bg-cover transform translateZ[-2px] scale-[1.2] parallax-layer h-48 sm:h-full">
+        <div class="absolute inset-0" style="
+      background: 
+        linear-gradient(to bottom, 
+          rgb(255, 255, 255) 0%,   
+          rgba(255, 255, 255, 0.63) 15%,    
+          rgba(255,255,255,0) 20%,     
+          transparent 25%,
+          rgba(66, 192, 186, 0.664) 50%,     
+          rgba(40, 157, 211, 0.795) 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 20%)">
+
+        </div>
+      </div>
+      <div class="relative h-full flex flex-col items-center justify-center text-center px-4">
+        <div class="absolute bottom-40 left-0 right-0 w-full px-6 md:px-12">
+          <div class="flex flex-col md:flex-row justify-between items-end">
+            <div class="text-left mb-6 md:mb-0">
+              <h1
+                class="text-3xl md:text-5xl font-semibold uppercase tracking-wider text-white text-shadow-md leading-relaxed">
+                <span>Health Matters,</span><br>
+                <span class="block mt-4">Medical Consultation.</span>
+              </h1>
+            </div>
+
+
+            <div class="text-right max-w-md">
+              <blockquote class="text-white italic text-lg md:text-xl">
+                "Peace of mind starts with trusted guidance."
+              </blockquote>
+              <p class="text-white mt-2 font-medium">— Mohamed Shukri</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Content layer (moves normally) -->
+
+    </section>
+  </div>
+  <!-- ----------------------------------- -->
+
+
+  <!-- scroll about -->
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollableSection = document.getElementById('scrollable-section');
+
+      // Prevent body scroll when mouse is over the scrollable section
+      scrollableSection.addEventListener('mouseenter', function () {
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Re-enable body scroll when mouse leaves the scrollable section
+      scrollableSection.addEventListener('mouseleave', function () {
+        document.body.style.overflow = '';
+      });
+
+      // Prevent wheel event propagation when scrolling the section
+      scrollableSection.addEventListener('wheel', function (e) {
+        // Check if we're at the top trying to scroll up or at the bottom trying to scroll down
+        const isAtTop = this.scrollTop === 0 && e.deltaY < 0;
+        const isAtBottom = this.scrollHeight - this.scrollTop === this.clientHeight && e.deltaY > 0;
+
+        // If we're at the boundaries, allow the event to propagate to body
+        if (isAtTop || isAtBottom) {
+          return true;
+        }
+
+        // Otherwise, prevent the event from propagating
+        e.stopPropagation();
+      }, { passive: false });
+    });
+  </script> -->
+
+
+  <!-- locomate -->
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      lerp: 0.01 // 👈 slow easing for more glide
+    });
+  </script>
+  <!-- 3D Card Flip Effect -->
+
+  <!-- JavaScript -->
+
+</body>
+
+</html>

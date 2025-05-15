@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimedicus</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<style type="text/tailwindcss">
+  @layer utilities {
+          .perspective-1000 {
+              perspective: 1000px;
+          }
+          .transform-style-preserve-3d {
+              transform-style: preserve-3d;
+          }
+          .backface-hidden {
+              backface-visibility: hidden;
+          }
+      }
+  </style>
+
+
+
+
+<body>
+  <!-- Amazing Scroll -->
+
+ 
+
+ 
+
+
+  <div class="navbar-bg">
+    <!-- Overlay -->
+    <div class="nav-overlay ">
+      <!-- Navbar -->
+      <nav class="navbar fixed w-full z-50 px-6 py-4 animate__animated animate__fadeInDown">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <!-- Logo -->
+          <div class="text-white text-2xl font-bold">
+            <a href="#" class="flex items-center">
+              <img src="/images/logo.png" width="145px" alt="">
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <div class="dropdown relative">
+              <a href="/effect.html"
+                class="nav-link text-[#42C0BA] hover:text-purple-300 transition duration-300">Solutions</a>
+              <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Solution 1</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Solution 2</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Solution 3</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Solution 4</a>
+              </div>
+            </div>
+
+            <div class="dropdown relative">
+              <a href="#about" class="nav-link text-white hover:text-purple-300 transition duration-300">About</a>
+              <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Mission</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Vision</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Portfolio</a>
+              </div>
+            </div>
+
+            <a href="#careers" class="nav-link text-white hover:text-purple-300 transition duration-300">Careers</a>
+            <a href="#meeting"
+              class="nav-link navfour text-white hover:text-purple-300 transition duration-300">Schedule a
+              Meeting</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+          class="hidden md:hidden absolute top-16 left-0 right-0 bg-gray-900 bg-opacity-95 py-4 px-6">
+          <div class="flex flex-col space-y-4">
+            <div>
+              <button class="text-white flex items-center justify-between w-full py-2">
+                <span>Solutions</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="pl-4 hidden">
+                <a href="#" class="block py-2 text-gray-300 hover:text-white">Solution 1</a>
+                <a href="#" class="block py-2 text-gray-300 hover:text-white">Solution 2</a>
+                <a href="#" class="block py-2 text-gray-300 hover:text-white">Solution 3</a>
+                <a href="#" class="block py-2 text-gray-300 hover:text-white">Solution 4</a>
+              </div>
+            </div>
+
+            <div>
+              <button class="text-white flex items-center justify-between w-full py-2">
+                <span>About</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="pl-4 hidden">
+                <a href="#" class="block py-2 text-gray-300 hover:text-white">Mission</a>
+                <a href="#" class="block py-2 text-gray-300 hover:text-white">Vision</a>
+                <a href="#" class="block py-2 text-gray-300 hover:text-white">Portfolio</a>
+              </div>
+            </div>
+
+            <a href="#meeting" class="text-white py-2">Schedule a Meeting</a>
+            <a href="#careers" class="text-white py-2">Careers</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="relative h-screen overflow-hidden">
+        <!-- Background layer (moves slower) -->
+        <div
+          class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center transform translateZ(-2px) scale(1.2) parallax-layer">
+        </div> 
+    
+        <!-- Content layer (moves normally) -->
+        <div class="relative h-full flex flex-col items-center justify-center text-center px-4">
+           
+         
+          <!-- Scroll indicator -->
+          <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+              <div class="w-1 h-2 bg-white mt-2 rounded-full animate-scrollIndicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      
+    
+    </div>
+  </div>
+
+  <!-- Dummy sections for smooth scroll demonstration -->
+  <section id="solutions" class="section bg-gray-800">
+    Solutions Section
+  </section>
+  <section id="about" class="section bg-gray-700">
+    About Section
+  </section>
+  <section id="meeting" class="section bg-gray-900">
+    Schedule a Meeting Section
+  </section>
+  <section id="careers" class="section bg-purple-900">
+    Careers Section
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Dropdown toggle for mobile
+    const mobileDropdownButtons = document.querySelectorAll('#mobile-menu button');
+    mobileDropdownButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const dropdownContent = this.nextElementSibling;
+        dropdownContent.classList.toggle('hidden');
+        const icon = this.querySelector('i');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+
+    // scrolll
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Add scroll event listener
+      window.addEventListener('scroll', function () {
+        // Get all elements with scroll effects
+        const fadeElements = document.querySelectorAll('.scroll-fade-in');
+        const translateYElements = document.querySelectorAll('.scroll-translate-y');
+        const translateXElements = document.querySelectorAll('.scroll-translate-x');
+        const translateXNegativeElements = document.querySelectorAll('.scroll-translate-x-negative');
+        const rotateYElements = document.querySelectorAll('.scroll-rotate-y');
+
+        // Check each element's position relative to viewport
+        checkPosition(fadeElements, 'opacity-100');
+        checkPosition(translateYElements, 'translate-y-0 opacity-100');
+        checkPosition(translateXElements, 'translate-x-0 opacity-100');
+        checkPosition(translateXNegativeElements, '-translate-x-0 opacity-100');
+        checkPosition(rotateYElements, 'rotate-y-0');
+
+        // Parallax effect for hero section
+        const parallaxLayers = document.querySelectorAll('.parallax-layer');
+        const scrollPosition = window.pageYOffset;
+
+        parallaxLayers.forEach(layer => {
+          const speed = parseFloat(layer.getAttribute('data-speed')) || 0.5;
+          const yPos = -(scrollPosition * speed);
+          layer.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        });
+      });
+
+      // Helper function to check element position and add classes
+      function checkPosition(elements, activeClass) {
+        elements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          // If element is in viewport, add active class
+          if (elementTop < windowHeight - 100) {
+            element.classList.add(...activeClass.split(' '));
+          }
+        });
+      }
+
+      // Trigger scroll event once to check initial positions
+      window.dispatchEvent(new Event('scroll'));
+    });
+  </script>
+</body>
+
+</html>
