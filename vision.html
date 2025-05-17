@@ -119,7 +119,8 @@
     <section data-scroll-section>
       <div class="  banner-content relative z-10 w-full">
         <section class="w-full !z-50">
-          <div class="mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#42C0BA]/10 via-[#42C0BA]/5 to-[#289DD3]/10 top-5 w-full">
+          <div
+            class="mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#42C0BA]/10 via-[#42C0BA]/5 to-[#289DD3]/10 top-5 w-full">
             <div class="flex items-center h-[130px] justify-between ">
               <!-- Logo -->
               <div class="flex-shrink-0 flex items-center" data-scroll-speed="-8">
@@ -143,7 +144,7 @@
                     </a>
 
                     <!-- Dropdown Menu -->
-                   <div class="absolute w-[360px]  rounded-2xl bg-white opacity-0 p-6 invisible translate-y-1 
+                    <div class="absolute w-[360px]  rounded-2xl bg-white opacity-0 p-6 invisible translate-y-1 
                       group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
                       transition-all duration-300 ease-out 
                       pointer-events-none group-hover:pointer-events-auto
@@ -170,7 +171,7 @@
                             class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
                         </a>
 
-                        
+
                       </div>
                     </div>
                   </div>
@@ -371,15 +372,134 @@
       <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Hero Image with Scientific Overlay -->
         <div
-          class="relative h-[500px] rounded-3xl overflow-hidden border-4 border-white shadow-2xl transform transition-all duration-700 hover:rotate-1 hover:scale-[1.01]">
-          <div class="absolute inset-0 bg-gradient-to-br from-[#42C0BA]/20 to-[#289DD3]/20 mix-blend-overlay"></div>
-          <img src="images/User.png" alt="Medical Innovation" class="h-full w-full object-cover object-center"
-            loading="lazy">
-          <div class="absolute bottom-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
-            <span class="text-sm font-medium text-[#1e698b]">Founder</span>
+          class="relative h-[500px] rounded-3xl overflow-hidden border-4 border-white/10 bg-gradient-to-br from-[#f0f4f8] to-[#e2e8f0] shadow-2xl">
+          <!-- Animated gradient mesh (background) -->
+          <div class="absolute inset-0 opacity-70 animate-gradient-mesh"></div>
+
+          <!-- Floating geometric shapes -->
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+
+          <!-- Hidden text reveal (appears on hover) -->
+          <div class="absolute bottom-0 bottom-[150px] right-[42%]  flex justify-center">
+            <img src="images/footer logo.png" class="w-[100px] animate-float-vertical" alt="Logo">
           </div>
+
+          <style>
+            @keyframes float-vertical {
+
+              0%,
+              100% {
+                transform: translateY(0);
+              }
+
+              50% {
+                transform: translateY(-35px);
+              }
+            }
+
+            .animate-float-vertical {
+              animation: float-vertical 7s ease-in-out infinite;
+            }
+          </style>
+
+
         </div>
 
+        <style>
+          /* Animated gradient mesh (like a living texture) */
+          @keyframes gradient-mesh {
+            0% {
+              background-position: 0% 0%;
+            }
+
+            50% {
+              background-position: 100% 100%;
+            }
+
+            100% {
+              background-position: 0% 0%;
+            }
+          }
+
+          .animate-gradient-mesh {
+            background:
+              radial-gradient(circle at 20% 30%, #42C0BA55 0%, transparent 30%),
+              radial-gradient(circle at 80% 70%, #289DD355 0%, transparent 30%),
+              radial-gradient(circle at 40% 60%, #d53f8c33 0%, transparent 40%);
+            background-size: 200% 200%;
+            animation: gradient-mesh 15s ease infinite;
+          }
+
+          /* Floating geometric shapes (3D-ish movement) */
+          .shape {
+            position: absolute;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            filter: blur(30px);
+            opacity: 0.7;
+            animation: float-shape 12s ease-in-out infinite;
+          }
+
+          .shape-1 {
+            width: 150px;
+            height: 150px;
+            background: #42C0BA;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+          }
+
+          .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: #289DD3;
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 2s;
+          }
+
+          .shape-3 {
+            width: 100px;
+            height: 100px;
+            background: #d53f8c;
+            top: 50%;
+            left: 50%;
+            animation-delay: 4s;
+          }
+
+          @keyframes float-shape {
+
+            0%,
+            100% {
+              transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+              transform: translate(50px, -30px) rotate(10deg);
+            }
+
+            50% {
+              transform: translate(-20px, 40px) rotate(-20deg);
+            }
+
+            75% {
+              transform: translate(30px, 20px) rotate(15deg);
+            }
+          }
+
+          /* Hidden text reveal (hover to see "BEYOND") */
+          .hidden-text {
+            font-size: 5rem;
+            letter-spacing: -0.05em;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+          }
+
+          .hidden-text:hover {
+            opacity: 1;
+          }
+        </style>
         <!-- Vision Content -->
         <div class="relative space-y-8">
           <!-- Animated Label -->
@@ -576,10 +696,284 @@
       }
     </style>
 
+    <!-- Mission Section Start -->
+    <section class="relative overflow-hidden py-24 px-6 sm:py-32 lg:px-8 bg-white">
+      <!-- Neurographic Background -->
+      <div class="absolute inset-0 -z-5 opacity-50 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,#f8fafc_0%,#f1f5f9_100%)]"></div>
+
+        <!-- Diamond Grid Overlay -->
+        <div class="absolute inset-0 opacity-10">
+          <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:40px_40px]">
+          </div>
+          <div
+            class="absolute inset-0 bg-[linear-gradient(45deg,transparent_calc(50%-1px),#42C0BA_calc(50%-1px),#42C0BA_calc(50%+1px),transparent_calc(50%+1px))] bg-[size:40px_40px]">
+          </div>
+          <div
+            class="absolute inset-0 bg-[linear-gradient(-45deg,transparent_calc(50%-1px),#289DD3_calc(50%-1px),#289DD3_calc(50%+1px),transparent_calc(50%+1px))] bg-[size:40px_40px]">
+          </div>
+        </div>
+
+        <div
+          class="absolute left-0 top-0 h-full w-1/2 bg-[url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-90">
+        </div>
+        <div
+          class="absolute left-1/2 top-0 h-full w-1/2 bg-gradient-to-r from-[#42C0BA]/5 via-[#1e698b]/5 to-[#289DD3]/5">
+        </div>
+        <div
+          class="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#42C0BA]/30 to-transparent">
+        </div>
+      </div>
+
+      <!-- Floating Molecules -->
+      <div
+        class="absolute left-1/4 top-1/4 w-12 h-12 rounded-full bg-[#42C0BA]/10 border border-[#42C0BA]/30 animate-[moleculeFloat_8s_ease-in-out_infinite]">
+      </div>
+      <div
+        class="absolute right-1/4 bottom-1/3 w-16 h-16 rounded-full bg-[#289DD3]/10 border border-[#289DD3]/30 animate-[moleculeFloat_12s_ease-in-out_infinite_reverse]">
+      </div>
+
+      <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Vision Content -->
+        <div class="relative space-y-8">
+          <!-- Animated Label -->
+          <div class="inline-block relative">
+            <div class="absolute -inset-3 bg-[#42C0BA]/10 rounded-full blur-md animate-[pulse_6s_ease-in-out_infinite]">
+            </div>
+            <!-- <span class="relative px-4 py-2 text-sm font-semibold text-[#1e698b] bg-white/80 backdrop-blur-sm rounded-full border border-[#42C0BA]/20">
+          Our Vision
+        </span> -->
+          </div>
+
+          <!-- Kinetic Headline -->
+          <h2 class="text-4xl sm:text-5xl text-right font-bold tracking-tight text-gray-900">
+            <span class="block overflow-hidden">
+              <span class="inline-block animate-[slideUp_1s_ease-out_forwards] opacity-0 [transform:translateY(30px)]">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#42C0BA] to-[#1e698b]">Mission</span>
+              </span>
+            </span>
+            <span class="block overflow-hidden mt-2">
+              <span
+                class="inline-block animate-[slideUp_1s_ease-out_0.2s_forwards] opacity-0 [transform:translateY(30px)]">
+                <span class="text-[#1e698b]">of Optimedicus</span>
+              </span>
+            </span>
+          </h2>
+
+          <!-- Vision Statement with Animated Underline -->
+          <div class="relative max-w-2xl text-right ">
+            <p class="text-xl text-gray-600 leading-relaxed animate-[fadeIn_1s_ease-out_0.4s_forwards] opacity-0">
+              We optimize medication safety, adherence, and outcomes through personalized pharmacist care—preventing
+              hospitalizations, reducing costs, and empowering patients.
+
+            </p>
+            <div
+              class="absolute -bottom-4 left-0 h-1 w-full bg-gradient-to-r from-transparent via-[#42C0BA] to-transparent animate-[underlineExpand_1.2s_cubic-bezier(0.16,1,0.3,1)_0.6s_forwards] [transform:scaleX(0)] origin-left">
+            </div>
+          </div>
+
+          <!-- Interactive CTA -->
+          <div class="pt-8 text-right ">
+            <a href="#"
+              class="glass-button relative inline-block px-12 py-5 text-lg font-medium rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-xl hover:shadow-[#289DD3]/30">
+              <!-- Gradient background -->
+              <div class="absolute inset-0 bg-gradient-to-r from-[#42C0BA] to-[#289DD3] rounded-xl z-0"></div>
+
+              <!-- Glass overlay -->
+              <div
+                class="absolute inset-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl group-hover:bg-white/15 transition-all duration-500 z-0">
+              </div>
+
+              <!-- Animated border -->
+              <div class="absolute inset-0 rounded-xl p-px -z-10 overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#42C0BA] to-[#289DD3] rounded-xl opacity-0 group-hover:opacity-100 group-hover:animate-[spin_3s_linear_infinite] transition-opacity duration-500">
+                </div>
+              </div>
+
+              <!-- Floating particles -->
+              <div class="particles absolute inset-0 overflow-hidden rounded-xl">
+                <div class="particle absolute w-1.5 h-1.5 bg-white rounded-full opacity-0 group-hover:opacity-70"
+                  style="top:20%; left:15%"></div>
+                <div class="particle absolute w-1.5 h-1.5 bg-[#42C0BA] rounded-full opacity-0 group-hover:opacity-70"
+                  style="top:60%; left:80%"></div>
+              </div>
+
+              <!-- Button content with message icon -->
+              <div class="relative z-10 flex items-center justify-center gap-3 text-white h-full">
+                <span class="relative overflow-hidden h-8 flex items-center">
+                  <span class="inline-block transition-transform duration-500 group-hover:-translate-y-full">
+                    Reach Out
+                  </span>
+                  <span
+                    class="absolute inset-0 flex items-center justify-center transition-transform duration-500 translate-y-full group-hover:translate-y-0">
+                    Let's Talk
+                  </span>
+                </span>
+                <svg class="w-6 h-6 transition-all duration-500 group-hover:scale-110" fill="none" stroke="currentColor"
+                  stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z">
+                  </path>
+                </svg>
+              </div>
+
+              <!-- Hover shine effect -->
+              <div class="absolute inset-0 overflow-hidden rounded-xl">
+                <div
+                  class="absolute -inset-12 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-60 group-hover:animate-[shine_1.5s_ease-in-out] z-0">
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image with Scientific Overlay -->
+        <div
+          class="relative h-[500px] rounded-3xl overflow-hidden border-4 border-white/10 bg-gradient-to-br from-[#f0f4f8] to-[#e2e8f0] shadow-2xl">
+          <!-- Animated gradient mesh (background) -->
+          <div class="absolute inset-0 opacity-70 animate-gradient-mesh"></div>
+
+          <!-- Floating geometric shapes -->
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+
+          <!-- Hidden text reveal (appears on hover) -->
+          <div class="absolute bottom-0 bottom-[150px] right-[42%]  flex justify-center">
+            <img src="images/footer logo.png" class="w-[100px] animate-float-vertical" alt="Logo">
+          </div>
+
+          <style>
+            @keyframes float-vertical {
+
+              0%,
+              100% {
+                transform: translateY(0);
+              }
+
+              50% {
+                transform: translateY(-35px);
+              }
+            }
+
+            .animate-float-vertical {
+              animation: float-vertical 7s ease-in-out infinite;
+            }
+          </style>
+        </div>
+
+
+      </div>
+    </section>
+
+    <style>
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) rotate(15deg);
+        }
+
+        100% {
+          transform: translateX(100%) rotate(15deg);
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes particle-float {
+
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+
+        25% {
+          transform: translate(5px, -10px);
+        }
+
+        50% {
+          transform: translate(10px, -15px);
+        }
+
+        75% {
+          transform: translate(5px, -10px);
+        }
+      }
+
+      .glass-button:hover .particle:nth-child(1) {
+        animation: particle-float 3s ease-in-out infinite;
+      }
+
+      .glass-button:hover .particle:nth-child(2) {
+        animation: particle-float 3s ease-in-out infinite 0.5s;
+      }
+
+      @keyframes moleculeFloat {
+
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+
+        25% {
+          transform: translate(5%, 3%) rotate(2deg);
+        }
+
+        50% {
+          transform: translate(8%, -2%) rotate(-1deg);
+        }
+
+        75% {
+          transform: translate(3%, 5%) rotate(1deg);
+        }
+      }
+
+      @keyframes slideUp {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes underlineExpand {
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes pulse {
+
+        0%,
+        100% {
+          opacity: 0.8;
+        }
+
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+
     <!-- Reminder Section Starts -->
     <section data-scroll-section
       class="relative overflow-hidden bg-gradient-to-br from-[#e0f2fe] via-[#bae6fd] to-[#7dd3fc] py-24 px-4 sm:px-6 lg:px-8">
-      
+
       <!-- Animated particle background -->
       <div class="absolute inset-0 overflow-hidden opacity-40">
         <div class="particle absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-cyan-400"></div>
@@ -836,8 +1230,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:hello@example.com"
-                  class="text-[#d5edf5] hover:text-white hover:underline">hello@example.com</a>
+                <a href="mailto:info@optimedicus.com"
+                  class="text-[#d5edf5] hover:text-white hover:underline">info@optimedicus.com</a>
               </li>
             </ul>
           </div>
@@ -967,7 +1361,7 @@
 
     </footer>
     <!-- Footer section ends -->
- 
+
     <!-- Footer Section Ends -->
 
     <!-- Magnetic Button 3 -->
