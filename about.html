@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Scroll Layout</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .lock-scroll {
+      overflow: hidden !important;
+    }
+    /* Locomotive Scroll styles */
+    html.has-scroll-smooth {
+      overflow: hidden;
+    }
+    html.has-scroll-dragging {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .c-scrollbar {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 11px;
+      height: 100%;
+      transform-origin: center right;
+      transition: transform 0.3s, opacity 0.3s;
+      opacity: 0;
+    }
+    .c-scrollbar:hover {
+      transform: scaleX(1.45);
+    }
+    .c-scrollbar:hover,
+    .has-scroll-scrolling .c-scrollbar,
+    .has-scroll-dragging .c-scrollbar {
+      opacity: 1;
+    }
+    .c-scrollbar_thumb {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: black;
+      opacity: 0.5;
+      width: 7px;
+      border-radius: 10px;
+      margin: 2px;
+      cursor: -webkit-grab;
+      cursor: grab;
+    }
+    .has-scroll-dragging .c-scrollbar_thumb {
+      cursor: -webkit-grabbing;
+      cursor: grabbing;
+    }
+  </style>
+</head>
+<body class="font-sans bg-white">
+  <!-- Main container for Locomotive Scroll -->
+  <div class="smooth-scroll" data-scroll-container>
+    <!-- Previous Section -->
+    <section class="h-screen bg-gray-100 flex items-center justify-center" data-scroll-section>
+      <h1 class="text-4xl font-bold">Previous Section</h1>
+    </section>
+
+    <!-- Main Split Section -->
+    <div class="flex relative" data-scroll-section>
+      <!-- Left Column (34%) - Sticky -->
+      <div class="w-[34%] h-screen bg-blue-100 sticky top-0 flex items-center justify-center" data-scroll data-scroll-sticky data-scroll-target=".flex.relative">
+        <div class="text-center p-8">
+          <h2 class="text-3xl font-bold mb-4">Left Panel</h2>
+          <p>This stays fixed while right side scrolls</p>
+          <button id="skip-button" class="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg opacity-0 transition-opacity duration-300 pointer-events-none">
+            Continue to Last Section
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column (64%) - Scrollable -->
+      <div class="w-[64%] ml-auto bg-green-100">
+        <div id="scroll-content" class="p-12" data-scroll data-scroll-speed="1">
+          <h2 class="text-3xl font-bold mb-8">Scroll This Content First</h2>
+          
+          <div class="space-y-8">
+            <!-- Content Blocks -->
+            <div class="content-block" data-scroll>
+              <h3 class="text-xl font-semibold mb-3">Section 1</h3>
+              <p>Scroll through this content first...</p>
+            </div>
+            
+            <div class="content-block" data-scroll>
+              <h3 class="text-xl font-semibold mb-3">Section 2</h3>
+              <p>Continue scrolling down...</p>
+            </div>
+            
+            <div class="content-block" data-scroll data-scroll-speed="0.5">
+              <h3 class="text-xl font-semibold mb-3">Section 3</h3>
+              <p>More content to scroll through...</p>
+            </div>
+            
+            <div class="content-block" data-scroll>
+              <h3 class="text-xl font-semibold mb-3">Section 4</h3>
+              <p>Keep going...</p>
+            </div>
+            
+            <div class="content-block" data-scroll data-scroll-speed="0.5">
+              <h3 class="text-xl font-semibold mb-3">Section 5</h3>
+              <p>Final content block</p>
+            </div>
+          </div>
+          
+          <!-- Spacer to ensure scrollable area -->
+          <div class="h-screen"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last Section -->
+    <section id="last-section" class="h-screen bg-gray-200 flex items-center justify-center" data-scroll-section>
+      <h1 class="text-4xl font-bold">Last Section</h1>
+    </section>
+  </div>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Locomotive Scroll
+      const locoScroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: true
+        }
+      });
+      
+      // Update ScrollTrigger when Locomotive Scroll updates
+      locoScroll.on('scroll', ScrollTrigger.update);
+      
+      // Tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element
+      ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+        scrollTop(value) {
+          return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+          return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+        },
+        pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
+      });
+      
+      // Initialize GSAP ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+      
+      const skipButton = document.getElementById('skip-button');
+      const lastSection = document.getElementById('last-section');
+      const scrollContent = document.getElementById('scroll-content');
+      
+      // Calculate content height
+      const contentHeight = scrollContent.scrollHeight;
+      const viewportHeight = window.innerHeight;
+      
+      // Set right column height
+      document.querySelector('.bg-green-100').style.height = `${contentHeight}px`;
+      
+      // Track scroll completion
+      ScrollTrigger.create({
+        trigger: ".bg-green-100",
+        scroller: '[data-scroll-container]',
+        start: "top top",
+        end: "bottom bottom",
+        onUpdate: (self) => {
+          const progress = self.progress;
+          
+          // Show skip button when scrolled 90%
+          if (progress > 0.9) {
+            skipButton.classList.remove('opacity-0', 'pointer-events-none');
+          } else {
+            skipButton.classList.add('opacity-0', 'pointer-events-none');
+          }
+        }
+      });
+      
+      // Handle skip to last section
+      skipButton.addEventListener('click', () => {
+        locoScroll.scrollTo(lastSection);
+      });
+      
+      // Prevent left column scrolling until right is complete
+      ScrollTrigger.create({
+        trigger: ".bg-blue-100",
+        scroller: '[data-scroll-container]',
+        start: "top top",
+        end: "bottom bottom",
+        onEnter: () => {
+          if (!skipButton.classList.contains('opacity-0')) {
+            locoScroll.scrollTo(lastSection);
+          }
+        }
+      });
+      
+      // Refresh ScrollTrigger and Locomotive Scroll when everything is loaded
+      ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
+      ScrollTrigger.refresh();
+    });
+  </script>
+</body>
+</html>
