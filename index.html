@@ -19,6 +19,10 @@
   <!-- Locomotive Scroll -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 
+  <!-- hamburgers ICon -->
+  <link href="https://cdn.jsdelivr.net/npm/hamburgers@1.2.1/dist/hamburgers.min.css" rel="stylesheet">
+
+
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <!-- Banner Css -->
 
@@ -142,95 +146,84 @@
 <body>
   <div class="smooth-scroll" data-scroll-container>
     <!-- Nav&Banner Section Starts -->
-    <nav data-scroll-section class="absolute top-3  left-0   right-0 z-50   ">
+    <nav data-scroll-section class="absolute text-[#1F4356] top-3 left-0 right-0 z-50">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between h-16 md:h-20">
           <!-- Logo -->
           <div class="flex-shrink-0 flex items-center" data-scroll-speed="-8">
             <a href="index.html" class="flex items-center">
-              <img src="/images/logo.png" width="165px" alt="">
+              <img src="/images/logo.png" width="165px" alt="Company Logo">
             </a>
           </div>
-          <!-- Responsive -->
+          <!-- Desktop Menu -->
           <div class="hidden md:flex items-center space-x-8">
-
             <div class="relative group" data-scroll-speed="-8">
               <a href="#"
-                class="h-20 text-[#1F4356] hover:text-[#1e698b] px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
+                class="h-20 text-nav-dark hover:text-nav-hover px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
                 Solutions
                 <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-180" fill="none"
                   viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-
               <!-- Dropdown Menu -->
-              <div class="absolute w-[360px]  rounded-2xl bg-white opacity-0 p-6 invisible translate-y-1 
-                      group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
-                      transition-all duration-300 ease-out 
-                      pointer-events-none group-hover:pointer-events-auto
-                      z-50" data-scroll-speed="-8">
+              <div class="absolute w-[360px] rounded-2xl bg-white opacity-0 p-6 invisible translate-y-1 
+                                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
+                                    transition-all duration-300 ease-out 
+                                    pointer-events-none group-hover:pointer-events-auto z-50" data-scroll-speed="-8">
                 <div class="py-1">
                   <a href="mtm.html"
-                    class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden  ">
+                    class="block px-4 hover:text-[#279DD1] py-2 text-lg text-nav-hover uppercase transition-colors duration-200 group/item relative overflow-hidden">
                     Medication Therapy Management (MTM)
                     <span
                       class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
                   </a>
-
                   <a href="qualifiesformtm.html"
-                    class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden">
+                    class="block px-4 hover:text-[#279DD1] py-2 text-lg text-nav-hover uppercase transition-colors duration-200 group/item relative overflow-hidden">
                     Who Qualifies for MTM
                     <span
                       class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
                   </a>
-
                   <a href="howmtmworks.html"
-                    class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden">
+                    class="block px-4 hover:text-[#279DD1] py-2 text-lg text-nav-hover uppercase transition-colors duration-200 group/item relative overflow-hidden">
                     How MTM Works
                     <span
                       class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
                   </a>
-
-
                 </div>
               </div>
             </div>
+            <!-- About Dropdown -->
             <div class="hidden md:flex items-center px-5 space-x-8" data-scroll-speed="-8">
-              <!-- About Dropdown -->
               <div class="relative group mr-5">
                 <a href="#"
-                  class="h-20 text-[#1F4356] hover:text-[#1e698b] px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
+                  class="h-20 text-nav-dark hover:text-nav-hover px-3 py-2 hover:text-opacity-100 rounded-md text-xl uppercase font-medium flex items-center transition-all duration-300 ease-out tracking-wider">
                   About
                   <svg class="ml-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-180" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </a>
-
                 <!-- Dropdown Menu -->
                 <div class="absolute w-60 rounded-2xl bg-white opacity-0 p-6 invisible translate-y-1 
-                      group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
-                      transition-all duration-300 ease-out 
-                      pointer-events-none group-hover:pointer-events-auto
-                      z-50">
+                                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 
+                                    transition-all duration-300 ease-out 
+                                    pointer-events-none group-hover:pointer-events-auto z-50">
                   <div class="py-1">
                     <a href="/articles.html"
-                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
-                      articles
+                      class="block px-4 py-2 hover:text-[#279DD1] text-lg text-nav-hover uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      Articles
                       <span
                         class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
                     </a>
-
                     <a href="vision.html"
-                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden  tracking-wider">
+                      class="block px-4 py-2 hover:text-[#279DD1] text-lg text-nav-hover uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
                       Vision
                       <span
                         class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
                     </a>
-
                     <a href="mission.html"
-                      class="block px-4 py-2 text-lg text-[#1e698b] uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
+                      class="block px-4 py-2 hover:text-[#279DD1] text-lg text-nav-hover uppercase transition-colors duration-200 group/item relative overflow-hidden tracking-wider">
                       Mission
                       <span
                         class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">→</span>
@@ -239,26 +232,217 @@
                 </div>
               </div>
             </div>
-
             <a href="/contact.html"
-              class="magnetic-btn font-medium px-10 py-4 rounded-xl font-medium text-[#1F4356] tracking-wider uppercase">
+              class="magnetic-btn font-medium px-10 py-4 rounded-xl font-medium text-nav-dark tracking-wider uppercase">
               Schedule a Meeting
             </a>
-
           </div>
-
+          <!-- Mobile/Tablet Menu Toggle -->
           <div class="md:hidden">
-            <button class="text-gray-800 focus:outline-none">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                </path>
-              </svg>
+            <button id="mobile-menu-button" class="hamburger hamburger--squeeze text-[#1F4356] focus:outline-none"
+              type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
             </button>
+          </div>
+        </div>
+        <!-- Mobile/Tablet Menu -->
+        <div id="mobile-menu"
+          class="md:hidden hidden fixed inset-0 z-50 h-screen bg-gradient-to-b from-white to-gray-50 shadow-2xl transform transition-transform duration-500 ease-in-out">
+          <div class="px-8 py-6 space-y-6 max-w-md mx-auto">
+            <!-- Header with Logo and Hamburger Icon -->
+            <div class="flex items-center justify-between">
+              <a href="index.html">
+                <img src="/images/logo-res.png" alt="Company Logo" class="w-[165px]">
+              </a>
+              <button id="mobile-menu-button-inner"
+                class="mt-5 hamburger hamburger--squeeze text-[#1F4356] focus:outline-none">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </div>
+            <!-- Solutions Dropdown -->
+            <div>
+              <button
+                class="w-full flex justify-between items-center text-[#1F4356] hover:text-custom-teal text-xl uppercase font-semibold transition-colors duration-300 tracking-widest group"
+                onclick="toggleDropdown('solutions-dropdown')">
+                Solutions
+                <svg class="ml-3 h-6 w-6 transition-transform duration-300 group-hover:rotate-180" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="solutions-dropdown" class="hidden mt-3 space-y-3 pl-4 border-l-2 border-custom-teal">
+                <a href="mtm.html"
+                  class="block px-4 py-2 text-[#1F4356] hover:text-custom-blue uppercase text-base font-medium transition-colors duration-200 hover:bg-gray-100 rounded-lg">Medication
+                  Therapy Management (MTM)</a>
+                <a href="qualifiesformtm.html"
+                  class="block px-4 py-2 text-[#1F4356] hover:text-custom-blue uppercase text-base font-medium transition-colors duration-200 hover:bg-gray-100 rounded-lg">Who
+                  Qualifies for MTM</a>
+                <a href="howmtmworks.html"
+                  class="block px-4 py-2 text-[#1F4356] hover:text-custom-blue uppercase text-base font-medium transition-colors duration-200 hover:bg-gray-100 rounded-lg">How
+                  MTM Works</a>
+              </div>
+            </div>
+            <!-- About Dropdown -->
+            <div>
+              <button
+                class="w-full flex justify-between items-center text-[#1F4356] hover:text-custom-teal text-xl uppercase font-semibold transition-colors duration-300 tracking-widest group"
+                onclick="toggleDropdown('about-dropdown')">
+                About
+                <svg class="ml-3 h-6 w-6 transition-transform duration-300 group-hover:rotate-180" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="about-dropdown" class="hidden mt-3 space-y-3 pl-4 border-l-2 border-custom-teal">
+                <a href="/articles.html"
+                  class="block px-4 py-2 text-[#1F4356] hover:text-custom-blue uppercase text-base font-medium transition-colors duration-200 hover:bg-gray-100 rounded-lg">Articles</a>
+                <a href="vision.html"
+                  class="block px-4 py-2 text-[#1F4356] hover:text-custom-blue uppercase text-base font-medium transition-colors duration-200 hover:bg-gray-100 rounded-lg">Vision</a>
+                <a href="mission.html"
+                  class="block px-4 py-2 text-[#1F4356] hover:text-custom-blue uppercase text-base font-medium transition-colors duration-200 hover:bg-gray-100 rounded-lg">Mission</a>
+              </div>
+            </div>
+            <!-- Schedule a Meeting -->
+            <div class="px-10 pb-10 max-w-md mx-auto">
+              <a href="/contact.html"
+                class="absolute bottom-8  text-center bg-gradient-to-r from-custom-teal to-custom-blue text-[#1F4356] font-semibold py-5 px-10 rounded-xl uppercase tracking-widest hover:from-custom-blue hover:to-custom-teal transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Schedule a Meeting
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </nav>
+
+    <style>
+      /* Assuming these are defined in your CSS */
+      :root {
+        --custom-teal: #2B6A6B;
+        --custom-blue: #1E3A8A;
+        --nav-dark: #1F2937;
+        --nav-hover: #3B82F6;
+      }
+
+      /* Smooth dropdown animation */
+      #solutions-dropdown,
+      #about-dropdown {
+        transition: all 0.3s ease-in-out;
+        transform-origin: top;
+      }
+
+      #solutions-dropdown.show,
+      #about-dropdown.show {
+        transform: scaleY(1);
+      }
+
+      /* Ensure full-width on mobile and tablet */
+      @media (max-width: 767px) {
+        #mobile-menu {
+          width: 100vw;
+        }
+      }
+
+      /* Hamburger styles */
+      .hamburger {
+        padding: 15px 15px;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .hamburger-box {
+        width: 24px;
+        height: 20px;
+        display: inline-block;
+        position: relative;
+      }
+
+      .hamburger-inner {
+        display: block;
+        top: 50%;
+        margin-top: -2px;
+      }
+
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        width: 24px;
+        height: 3px;
+        background-color: #1F4356;
+        border-radius: 4px;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        content: "";
+        display: block;
+      }
+
+      .hamburger-inner::before {
+        top: -8px;
+      }
+
+      .hamburger-inner::after {
+        bottom: -8px;
+      }
+
+      .hamburger--squeeze.is-active .hamburger-inner {
+        transform: rotate(45deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      .hamburger--squeeze.is-active .hamburger-inner::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+      }
+
+      .hamburger--squeeze.is-active .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    </style>
+
+    <script>
+      // Hamburger.js toggle
+      const menuButton = document.getElementById('mobile-menu-button');
+      const menuButtonInner = document.getElementById('mobile-menu-button-inner');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      // Toggle mobile menu with both buttons
+      [menuButton, menuButtonInner].forEach(button => {
+        button.addEventListener('click', () => {
+          menuButton.classList.toggle('is-active');
+          menuButtonInner.classList.toggle('is-active');
+          mobileMenu.classList.toggle('hidden');
+          document.body.style.overflow = mobileMenu.classList.contains('hidden') ? 'auto' : 'hidden';
+        });
+      });
+
+      // Dropdown toggle for mobile menu
+      function toggleDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        const isHidden = dropdown.classList.contains('hidden');
+        // Close all dropdowns
+        document.querySelectorAll('#mobile-menu .show').forEach(el => {
+          el.classList.add('hidden');
+          el.classList.remove('show');
+        });
+        // Toggle the clicked dropdown
+        if (isHidden) {
+          dropdown.classList.remove('hidden');
+          dropdown.classList.add('show');
+        }
+      }
+    </script>
     <!-- Nav Section End -->
 
     <!-- Banner Section Starts -->
@@ -1292,7 +1476,7 @@
       </div>
     </section>
 
-    <style> 
+    <style>
       /* Keyframes */
       @keyframes orb-float-1 {
 
@@ -1418,9 +1602,9 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        // Enhanced hover effects for article cards
+
         const articles = document.querySelectorAll('.group');
- 
+
         articles.forEach(article => {
           // Initial state for entrance animation
           article.style.opacity = '0';
@@ -1469,33 +1653,8 @@
           });
         });
 
-        // Add hover effect to article links
-        // const articleLinks = document.querySelectorAll('h3 a');
-        // articleLinks.forEach(link => {
-        //   link.addEventListener('mouseenter', () => {
-        //     const underline = link.querySelector('span:first-child');
-        //     underline.style.transform = 'scaleX(1)';
-        //   });
-        //   link.addEventListener('mouseleave', () => {
-        //     const underline = link.querySelector('span:first-child');
-        //     underline.style.transform = 'scaleX(0)';
-        //   });
-        // });
-
-        // Add parallax effect to background orbs on scroll
-        // window.addEventListener('scroll', function () {
-        //   const scrollY = window.scrollY;
-        //   const orb1 = document.querySelector('.animate-orb-float-1');
-        //   const orb2 = document.querySelector('.animate-orb-float-2');
-        //   const orb3 = document.querySelector('.animate-orb-float-3');
-
-        //   if (orb1) orb1.style.transform = `translate(${-30 + scrollY * 0.02}px, ${-40 + scrollY * 0.03}px) scale(1.05)`;
-        //   if (orb2) orb2.style.transform = `translate(${25 + scrollY * 0.03}px, ${30 + scrollY * 0.02}px) scale(1.03)`;
-        //   if (orb3) orb3.style.transform = `translate(${15 + scrollY * 0.01}px, ${-25 + scrollY * 0.02}px) scale(1.02)`;
-        // });
       });
     </script>
-
 
     <style>
       @keyframes shine {
@@ -2116,6 +2275,8 @@
   </script>
 
 
+
+<!-- Loco -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize Locomotive Scroll
